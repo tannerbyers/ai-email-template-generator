@@ -73,8 +73,8 @@ You can now deploy the generated build files to a server of your choice (e.g., A
 To deploy to AWS, follow these steps:
 
 1. Set up an S3 bucket for static file hosting (for the frontend).
-2. Use [AWS Lambda](https://aws.amazon.com/lambda/) or [Elastic Beanstalk](https://aws.amazon.com/elasticbeanstalk/) for the backend.
-3. Create a CloudFront distribution for CDN and SSL support.
+2. Use [AWS Lambda](https://aws.amazon.com/lambda/) for the backend.
+3. Create a CloudFront distribution for CORS support.
 
 Once deployed, your app will be fully functional on the cloud! ☁️
 
