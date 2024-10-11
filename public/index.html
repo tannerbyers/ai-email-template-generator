@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Email Template Generator</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet" />
+</head>
+<body class="bg-gray-900 text-white">
+
+<div class="container">
+    <div class="left-column">
+        <div class="button-container">
+            <button id="export-code" class="bg-blue-500 hover:bg-blue-400 text-white py-2 px-4 rounded">Export Code</button>
+            <button id="reset-template" class="bg-red-500 hover:bg-red-400 text-white py-2 px-4 rounded">Reset Template</button>
+        </div>
+
+        <div class="primary bg-gray-800 rounded-lg shadow-lg p-4">
+            <h2 class="text-lg font-semibold mb-4 text-center">Chat with AI</h2>
+            <div id="chat-log" class="chat-log"></div>
+            <div class="relative">
+                <textarea id="chat-input" class="w-full p-6 text-black rounded" type="text" placeholder="Type a message..." ></textarea>
+                <button id="chat-submit" class="bg-green-500 hover:bg-green-400 text-white py-2 px-4 rounded mt-2 w-full">Send</button>
+                <div id="loading-spinner" class="spinner"></div>
+            </div>
+        </div>
+
+        <div class="primary bg-gray-800 rounded-lg shadow-lg p-4 mt-4">
+            <h2 class="text-lg font-semibold mb-4 text-center">Handlebars Values</h2>
+            <div id="handlebars-values-section">
+                <div id="handlebars-values-list"></div>
+                <button id="add-handlebars-value" class="bg-blue-500 hover:bg-blue-400 text-white py-2 px-4 rounded mt-2 w-full">Add Handlebars Key</button>
+            </div>
+        </div>
+
+        <div id="code-editor-section" class="tertiary bg-gray-800 rounded-lg shadow-lg p-4">
+            <h2 class="text-2xl font-semibold my-8 text-center">Generated HTML & CSS</h2>
+            <textarea id="code-editor" class="w-full h-32 bg-gray-900 text-white p-4"></textarea>
+        </div>
+
+    </div>
+
+    <div class="right-column">
+        <h2 class="text-lg font-semibold mb-4 text-center text-white">Live Preview</h2>
+        <iframe id="live-preview" class="live-preview" sandbox="allow-scripts"></iframe>
+    </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
